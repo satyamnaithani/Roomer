@@ -1,0 +1,86 @@
+<%@ include file = "header2.jsp" %>
+
+
+<h2 align="center">Welcome <%= (String)session.getAttribute("fullName") %></h2>
+<p>Here the partner can add rooms to the particular hotel.He can also view his rooms which he has listed.</p>
+
+<%
+Class.forName("com.mysql.jdbc.Driver");
+Connection con =
+     DriverManager.getConnection("jdbc:mysql://localhost/rooms", "root", "2346");
+%>
+<% String hName = request.getParameter("hName");
+   session.setAttribute("hotlName", hName);
+%>
+<form style="text-align: center;padding-top: 80px;" action="AddRoom" method="post">
+<% if(request.getAttribute("hotelName").equals(null)) %>
+Hotel Name<br><input value=<%= hName%> type="text" name="hotelName" placeholder=<%= hName%>><br><br>
+Hotel Name<br><input value=<%= request.getAttribute("hotelName")%> type="text" name="hotelName" placeholder=<%=request.getAttribute("hotelName")%>><br><br>
+Room Number<br><input type="text" name="roomNo" placeholder="Room Number"><br><br>
+Room Size<br><select name = "roomSize">
+	<option value="OneBed">1 Adult</option>
+	<option value="TwoBed">2 Adults</option>
+	<option value="ThreeBed">3 Adults</option>
+	</select><br><br>
+Room Type<br><select name = "roomType">
+	<option value="AC">AC</option>
+	<option value="NON-AC">NON-AC</option>
+	<option value="COOLER">COOLER</option>
+	</select><br><br>
+TV<br><select name = "tv">
+	<option value="YES">YES</option>
+	<option value="NO">NO</option>
+	</select><br><br>
+Complimentary BreakFast<br><select name = "breakfast">
+	<option value="YES">YES</option>
+	<option value="NO">NO</option>
+	</select><br><br>
+Free Wifi <br><select name = "wifi">
+	<option value="YES">YES</option>
+	<option value="NO">NO</option>
+	</select><br><br>
+Price <br><input type="text" name="price" placeholder="INR">
+
+<input type="submit" value="Add Room">
+</form>
+<% 
+
+Statement stmt = con.createStatement();
+String sql1 = "select * from hotelrooms where hotelName = '"+(String)session.getAttribute("hotlName")+"' and  partnerName='"+(String)session.getAttribute("partnerName")+"'";
+ResultSet rslt = stmt.executeQuery(sql1);
+while (rslt.next()) {
+    out.println("<br><br>");
+    out.println("<strong>Hotel Name :   </strong>");
+    out.println("<td>" + rslt.getString("hotelName") + "</td>");
+    out.println("<br>");
+    out.println("<strong>RoomNo :   </strong>");
+    out.println("<td>" + rslt.getString("roomNo") + "</td>");
+    out.println("<br>");
+    out.println("<strong>Room Size :   </strong>");
+    out.println("<td>" + rslt.getString("roomSize") + "</td>");
+    out.println("<br>");
+    out.println("<strong>Type :   </strong>");
+    out.println("<td>" + rslt.getString("AC") + "</td>");
+    out.println("<br>");
+    out.println("<strong>TV :   </strong>");
+    out.println("<td>" + rslt.getString("TV") + "</td>");
+    out.println("<br>");
+    out.println("<strong>Complimentary Breakfast :   </strong>");
+    out.println("<td>" + rslt.getString("breakfast") + "</td>");
+    out.println("<br>");
+    out.println("<strong>wifi :  </strong>");
+    out.println("<td>" + rslt.getString("wifi") + "</td>");
+    out.println("<br>");
+    out.println("<strong>Price :  </strong>");
+    out.println("<td>" + rslt.getString("price") + "</td>");
+    out.println("<br>");
+    out.println("<p>************************************************************************</p>");
+    out.println("<p>************************************************************************</p>");  
+    
+}
+
+    
+%>
+
+
+<%@ include file = "footer.jsp" %>

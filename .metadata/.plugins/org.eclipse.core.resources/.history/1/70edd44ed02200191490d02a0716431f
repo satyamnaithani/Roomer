@@ -1,0 +1,22 @@
+<%@ include file = "header1.jsp" %>
+
+<%
+String fullName = request.getParameter("fullName");
+String mobileNo = request.getParameter("mobileNo");
+String hotelName = request.getParameter("hotelName");
+String roomNo = request.getParameter("roomNo");
+String roomSize = request.getParameter("roomSize");
+String AC = request.getParameter("AC");
+String TV = request.getParameter("TV");
+String breakfast = request.getParameter("breakfast");
+String wifi = request.getParameter("wifi");
+String price = request.getParameter("price");
+
+System.out.println(fullName);
+System.out.println(hotelName);
+out.println("ngbf");
+System.out.println("satyam");
+
+%>
+<h1 style="padding-top: 100px;"><%= fullName %></h1>
+<%@ include file = "footer.jsp" %>

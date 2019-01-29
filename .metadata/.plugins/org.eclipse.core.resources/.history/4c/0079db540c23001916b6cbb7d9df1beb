@@ -1,0 +1,37 @@
+<%@ include file = "header2.jsp" %>
+<div class="jumbotron"></div>
+
+<h1><%=request.getParameter("hotelName") %></h1>
+<h1><%=request.getParameter("roomNo") %></h1>
+
+<%
+String hotelName = request.getParameter("hotelName");
+String roomNo = request.getParameter("roomNo");
+String sql = "insert into booked_rooms values('"+fullName+"','"+mobileNo+"','"+partnerName+"','"+hotelName+"','"+roomNo+"','"+roomSize+"','"+AC+"','"+TV+"','"+breakfast+"','"+wifi+"','"+price+"')";
+String sql1 = "delete from hotelrooms where hotelName='"+hotelName+"' and roomNo='"+roomNo+"'";
+%>
+
+
+<%
+Class.forName("com.mysql.jdbc.Driver");
+Connection con =
+     DriverManager.getConnection("jdbc:mysql://localhost/rooms", "root", "2346");
+Statement stmt = con.createStatement();
+String sql1 = "select * from booked_rooms where hotelName = '"+hotlName+"' and roomNo = '"+roomNo+"'";
+ResultSet rslt = stmt.executeQuery(sql1);
+%>
+
+<%  while (rslt.next()) { %>
+<%
+	String hotelName = rslt.getString("hotelName");
+	String partnerName = rslt.getString("partnerName");
+	String roomNo = rslt.getString("roomNo");
+	String roomSize = rslt.getString("roomSize");
+	String AC = rslt.getString("AC");
+	String TV = rslt.getString("TV");
+	String breakfast = rslt.getString("breakfast");
+	String wifi = rslt.getString("wifi");
+	String price = rslt.getString("price");
+  %>
+
+<%@ include file = "footer.jsp" %>

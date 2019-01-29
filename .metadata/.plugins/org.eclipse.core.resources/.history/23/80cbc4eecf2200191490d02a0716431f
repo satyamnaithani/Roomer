@@ -1,0 +1,2 @@
+<%@ include file = "header1.jsp" %>
+<%@ include file = "footer.jsp" %>

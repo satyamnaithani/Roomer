@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>error</title>
+</head>
+<body>
+<p style="color:red;">Please Login First</p>
+<a href="index.html">Login/SignUp</a>
+</body>
+</html>

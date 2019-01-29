@@ -1,0 +1,9 @@
+<%@ include file = "header2.jsp" %>
+
+<%
+  Class.forName("com.mysql.cj.jdbc.Driver");
+  Connection con = DriverManager.getConnection("jdbc:mysql://localhost/rooms", "root", "2346");
+  Statement st = con.createStatement();
+%>
+
+<%@ include file = "footer.jsp" %>

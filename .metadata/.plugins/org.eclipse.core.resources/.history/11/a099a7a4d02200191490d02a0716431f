@@ -1,0 +1,37 @@
+package satyam;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/BookRooms")
+public class BookRooms extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String fullName = request.getParameter("fullName");
+		String mobileNo = request.getParameter("mobileNo");
+		String hotelName = request.getParameter("hotelName");
+		String roomNo = request.getParameter("roomNo");
+		String roomSize = request.getParameter("roomSize");
+		String AC = request.getParameter("AC");
+		String TV = request.getParameter("TV");
+		String breakfast = request.getParameter("breakfast");
+		String wifi = request.getParameter("wifi");
+		String price = request.getParameter("price");
+		
+		System.out.println(fullName);
+		System.out.println(hotelName);
+		out.println(fullName);
+		System.out.println("satyam");
+		
+
+}
+}

@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>Roomer</title>
+	<link rel="stylesheet" type="text/css" href="http://localhost:8090/OyoRooms/css/index_styles.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost:8090/OyoRooms/css/form.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="http://localhost:8090/OyoRooms/js/index.js"></script>
+</head>
+<body>
+
+	<div id="contain" class="animated fadeInUpBig">
+<div id="logo">
+	<a href="#"><img src="http://localhost:8090/OyoRooms/icons/rockrms-brands.svg" width="150" height="300"></a>
+</div>
+<hr>
+<div id="anchor">
+<a href="#" onclick="return register()">Register</a>
+<a href="#"  onclick="return login()">LogIn</a>
+</div>
+</div>
+
+
+
+<div id="Login" class="animated fadeInRightBig" style="display: none;">
+<div id="logo">
+	<a href="#"><img src="http://localhost:8090/OyoRooms/icons/rockrms-brands.svg" width="30" height="60"></a>
+</div>
+<hr>
+ <div id="form">
+  <form action="EnterpriseLogIn" method="post">
+    <label for="fname">Mobile Number</label>
+    <input type="text" id="fname" name="mobileNo" placeholder="Mobile Number">
+
+    <label for="lname">Password</label>
+    <input type="password" id="lname" name="password" placeholder="Password">
+  
+    <input type="submit" value="LogIn">
+  </form>
+  <a style="text-decoration: none; font-size: 15px;" href="#" onclick="return register()">Create Account</a>
+</div>
+</div>
+
+
+
+<div id="Register"class="animated fadeInLeftBig" style="display: none;">
+<div id="logo">
+	<a href="#"><img src="http://localhost:8090/OyoRooms/icons/rockrms-brands.svg" width="30" height="60"></a>
+</div>
+<hr>
+<div id="form">
+  <form action="EnterpriseRegister" method="post">
+    
+    <label for="fname">Partner Name</label>
+    <input type="text" id="fname" name="partnerName" placeholder="Partner Name">
+
+   
+    <label for="mob">Mobile Number</label>
+    <input type="text" id="mob" name="mobileNo" placeholder="Mobile Number">
+
+    <label for="pswd">Password</label>
+    <input type="password" id="pswd" name="password" placeholder="Password">
+  
+    <input type="submit" value="Register">
+  </form>
+  <a style="text-decoration: none; font-size: 15px;" href="#" onclick="return login()">Already a User?</a>
+</div>
+
+</div>
+
+
+
+<p id="copyright">© Satyam Naithani | 2019</p>
+</body>
+</html>

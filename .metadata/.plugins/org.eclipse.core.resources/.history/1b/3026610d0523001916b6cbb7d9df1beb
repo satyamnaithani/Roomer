@@ -1,0 +1,6 @@
+<%@ include file = "header2.jsp" %>
+<div class="jumbotron">
+<h1 align="center">Roomer-Enterprise DashBoard</h1>
+<p align="center">Upload quality rooms On Roomer and Get assured Increment In  Bussiness</p> 
+</div>
+<%@ include file = "footer.jsp" %>

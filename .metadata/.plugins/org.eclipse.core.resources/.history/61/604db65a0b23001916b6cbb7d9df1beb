@@ -1,0 +1,14 @@
+<%@ include file = "header2.jsp" %>
+
+<%
+  Class.forName("com.mysql.cj.jdbc.Driver");
+  Connection con = DriverManager.getConnection("jdbc:mysql://localhost/rooms", "root", "2346");
+  Statement st = con.createStatement();
+%>
+
+<div class="jumbotron"></div>
+
+<h1><%=request.getParameter("hotelName") %></h1>
+<h1><%=request.getParameter("roomNo") %></h1>
+
+<%@ include file = "footer.jsp" %>

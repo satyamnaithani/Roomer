@@ -1,0 +1,52 @@
+<%@ include file = "header1.jsp" %>
+
+<h1>You Are Great!</h1>
+<% String hotlName = request.getParameter("hotlName");%>
+<h1><%= hotlName %></h1>
+
+
+<%
+Class.forName("com.mysql.jdbc.Driver");
+Connection con =
+     DriverManager.getConnection("jdbc:mysql://localhost/rooms", "root", "2346");
+Statement stmt = con.createStatement();
+String sql1 = "select * from hotelrooms where hotelName = '"+hotlName+"'";
+ResultSet rslt = stmt.executeQuery(sql1);
+while (rslt.next()) {
+	
+    out.println("<br><br>");
+    out.println("<div>");
+    out.println("<strong>Hotel Name :   </strong>");
+    out.println("<td>" + rslt.getString("hotelName") + "</td>");
+    out.println("<br>");
+    out.println("<strong>RoomNo :   </strong>");
+    out.println("<td>" + rslt.getString("roomNo") + "</td>");
+    out.println("<br>");
+    out.println("<strong>Room Size :   </strong>");
+    out.println("<td>" + rslt.getString("roomSize") + "</td>");
+    out.println("<br>");
+    out.println("<strong>Type :   </strong>");
+    out.println("<td>" + rslt.getString("AC") + "</td>");
+    out.println("<br>");
+    out.println("<strong>TV :   </strong>");
+    out.println("<td>" + rslt.getString("TV") + "</td>");
+    out.println("<br>");
+    out.println("<strong>Complimentary Breakfast :   </strong>");
+    out.println("<td>" + rslt.getString("breakfast") + "</td>");
+    out.println("<br>");
+    out.println("<strong>wifi :  </strong>");
+    out.println("<td>" + rslt.getString("wifi") + "</td>");
+    out.println("<br>");
+    out.println("<strong>Price :  </strong>");
+    out.println("<td>" + rslt.getString("price") + "</td>");
+    out.println("</div>");
+    out.println("<br>");
+    out.println("<p>************************************************************************</p>");
+    out.println("<p>************************************************************************</p>");  
+    
+}
+
+    
+%>
+</body>
+</html>

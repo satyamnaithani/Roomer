@@ -1,0 +1,99 @@
+html,body{
+	background: url(http://localhost:8090/OyoRooms/Background/back.jpg);
+	background-size: cover;
+	background-position: center;
+	max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#logo {
+	text-align: center;
+	margin: auto;
+	padding: auto;	
+}
+
+#contain {
+	
+	height: 450px;
+  width: 400px;
+  border-radius: 15%;
+  background-color: rgba(248, 255, 216, 0.6);  
+}
+
+#login {
+	padding-top: 50px;
+	margin: 150px auto;
+	height: 450px;
+  width: 400px;
+  border-radius: 15%;
+  background-color: rgba(248, 255, 216, 0.6);  
+}
+
+#Register {
+	padding-top: 50px;
+	margin: 150px auto;
+	height: 550px;
+  width: 500px;
+  border-radius: 15%;
+  background-color: rgba(248, 255, 216, 0.6);  
+}
+
+#contain:hover {
+    background-color: rgba(248, 247, 216, 0.9);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+
+
+a{
+	font-size: 2em;
+    color: blue;
+	text-decoration: none;
+	font-weight: 500;
+	margin: 0 30px;
+	border-radius: 10px;
+	font-family: Arial, Helvetica, sans-serif; 
+}
+
+a:hover {
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+	             0px 8px 13px rgba(0,0,0,0.1),
+	             0px 18px 23px rgba(0,0,0,0.1);
+}
+
+#anchor{
+	text-align: center;
+	padding: 20px 0;
+}
+
+hr{
+	width: 350px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	}
+
+p {
+	text-align: center;
+	margin: 20px auto;
+	text-decoration: none;
+}	
+#enterprise {
+	color: white;
+	font-weight: 400;
+	position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+#copyright {
+	color: white;
+	font-weight: 400;
+	font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 15px;
+}
