@@ -1,0 +1,14 @@
+> create database rooms
+
+
+> use rooms;
+
+> create table register(fullName varchar(30), country varchar(10), mobileNo varchar(15), password varchar(30))
+
+> create table register_partner(partnerName varchar(20), password varchar(30), phoneNo varchar(15))
+
+> create table hotel(partnerName varchar(20), hotelName varchar(20), city varchar(15), location varchar(20), description varchar(150))
+
+> create table hotelrooms(partnerName varchar(20), hotelName varchar(20), roomNo varchar(8), roomSize varchar(10), AC varchar(10), TV varchar(5), breakfast varchar(5), wifi varchar(5), price varchar(6))
+
+> create table booked_rooms(fullName varchar(30), mobileNo varchar(15), partnerName varchar(20), hotelName varchar(20), roomNo varchar(8), roomSize varchar(10), AC varchar(10), TV varchar(5), breakfast varchar(5), wifi varchar(5), price varchar(6))
