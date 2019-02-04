@@ -1,14 +1,13 @@
-> create database rooms
+> CREATE DATABASE rooms;
 
+>USE rooms;
 
-> use rooms;
+> CREATE TABLE register(fullName varchar(30), country varchar(10), mobileNo varchar(15), password varchar(30) PRIMARY KEY(mobileNo))
 
-> create table register(fullName varchar(30), country varchar(10), mobileNo varchar(15), password varchar(30))
+> create table register_partner(partnerName varchar(20), password varchar(30), phoneNo varchar(15) PRIMARY KEY(phoneNo))
 
-> create table register_partner(partnerName varchar(20), password varchar(30), phoneNo varchar(15))
+> CREATE TABLE hotel(partnerName varchar(20), hotelName varchar(20), city varchar(15), location varchar(20), description varchar(150) PRIMARY KEY(hotelName))
 
-> create table hotel(partnerName varchar(20), hotelName varchar(20), city varchar(15), location varchar(20), description varchar(150))
-
-> create table hotelrooms(partnerName varchar(20), hotelName varchar(20), roomNo varchar(8), roomSize varchar(10), AC varchar(10), TV varchar(5), breakfast varchar(5), wifi varchar(5), price varchar(6))
+> CREATE TABLE hotelrooms(partnerName varchar(20), hotelName varchar(20), roomNo varchar(8), roomSize varchar(10), AC varchar(10), TV varchar(5), breakfast varchar(5), wifi varchar(5), price varchar(6) PRIMARY KEY(roomNo))
 
 > create table booked_rooms(fullName varchar(30), mobileNo varchar(15), partnerName varchar(20), hotelName varchar(20), roomNo varchar(8), roomSize varchar(10), AC varchar(10), TV varchar(5), breakfast varchar(5), wifi varchar(5), price varchar(6))
